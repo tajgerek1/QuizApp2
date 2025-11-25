@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="QuizApp.MainPage"
+BackgroundColor="#F4F4F4">
+
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+
+        <Label x:Name="PlayerTurnLabel"
+Text="Tura gracza 1"
+FontSize="26"
+HorizontalOptions="Center"
+TextColor="#333" />
+
+
+        <Frame CornerRadius="20" Padding="20" BackgroundColor="White" HasShadow="True">
+            <Label x:Name="QuestionLabel"
+FontSize="22"
+TextColor="#222"
+HorizontalOptions="Center"
+LineBreakMode="WordWrap"
+HorizontalTextAlignment="Center" />
+        </Frame>
+
+
+        <VerticalStackLayout Spacing="10">
+            <Button x:Name="AnswerButton1" Clicked="AnswerClicked"
+CornerRadius="12" FontSize="18" BackgroundColor="#e0e7ff" TextColor="#000" />
+            <Button x:Name="AnswerButton2" Clicked="AnswerClicked"
+CornerRadius="12" FontSize="18" BackgroundColor="#e0e7ff" TextColor="#000" />
+            <Button x:Name="AnswerButton3" Clicked="AnswerClicked"
+CornerRadius="12" FontSize="18" BackgroundColor="#e0e7ff" TextColor="#000" />
+            <Button x:Name="AnswerButton4" Clicked="AnswerClicked"
+CornerRadius="12" FontSize="18" BackgroundColor="#e0e7ff" TextColor="#000" />
+        </VerticalStackLayout>
+
+
+        <Frame x:Name="ResultFrame" IsVisible="False" Padding="25"
+BackgroundColor="White" CornerRadius="20" HasShadow="True">
+            <VerticalStackLayout Spacing="15">
+                <Label x:Name="ResultLabel" FontSize="26" HorizontalOptions="Center" />
+                <Button Text="Zagraj jeszcze raz" Clicked="RestartGame"
+BackgroundColor="#d1fae5" TextColor="#000" FontSize="20"
+CornerRadius="14" />
+            </VerticalStackLayout>
+        </Frame>
+
+
+    </VerticalStackLayout>
+</ContentPage>

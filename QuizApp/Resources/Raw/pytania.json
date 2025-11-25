@@ -1,0 +1,107 @@
+﻿[
+    {
+        "Id": 1,
+        "Question": "Który wyraz jest epitetem?",
+        "Answers": [ "i", "bardzo", "zielony", "biegać" ],
+        "CorrectIndex": 2
+    },
+    {
+        "Id": 2,
+        "Question": "Pole trójkąta o podstawie a i wysokości h obliczamy jako:",
+        "Answers": [ "a + h", "a · h", "(a · h) / 2", "(a + h) / 2" ],
+        "CorrectIndex": 2
+    },
+    {
+        "Id": 3,
+        "Question": "II wojna światowa wybuchła w:",
+        "Answers": [ "1914 r.", "1939 r.", "1945 r.", "1920 r." ],
+        "CorrectIndex": 1
+    },
+    {
+        "Id": 4,
+        "Question": "Mitochondria odpowiadają za:",
+        "Answers": [ "magazynowanie wody", "fotosyntezę", "oddychanie komórkowe", "ruch komórki" ],
+        "CorrectIndex": 2
+    },
+    {
+        "Id": 5,
+        "Question": "Najdłuższą rzeką w Polsce jest:",
+        "Answers": [ "Wisła", "Odra", "Warta", "Bug" ],
+        "CorrectIndex": 0
+    },
+    {
+        "Id": 6,
+        "Question": "Pierwiastek chemiczny to:",
+        "Answers": [
+            "najmniejsza cząsteczka wody",
+            "substancja złożona z atomów o jednakowej liczbie protonów",
+            "mieszanka dwóch gazów",
+            "atom zawierający różne jądra"
+        ],
+        "CorrectIndex": 1
+    },
+    {
+        "Id": 7,
+        "Question": "Który z wymienionych jest stanem skupienia materii?",
+        "Answers": [ "próżnia", "plazma", "światło", "prąd" ],
+        "CorrectIndex": 1
+    },
+    {
+        "Id": 8,
+        "Question": "Który z czasowników jest nieregularny?",
+        "Answers": [ "work", "play", "go", "open" ],
+        "CorrectIndex": 2
+    },
+    {
+        "Id": 9,
+        "Question": "CPU to inaczej:",
+        "Answers": [ "karta graficzna", "pamięć RAM", "procesor", "dysk twardy" ],
+        "CorrectIndex": 2
+    },
+    {
+        "Id": 10,
+        "Question": "Najważniejszym aktem prawnym w Polsce jest:",
+        "Answers": [ "Regulamin Sejmu", "Konstytucja", "Ustawa Budżetowa", "Traktat Lizboński" ],
+        "CorrectIndex": 1
+    },
+    {
+        "Id": 11,
+        "Question": "Pięć linii do zapisu nut to:",
+        "Answers": [ "oktawa", "tempo", "pięciolinia", "tonacja" ],
+        "CorrectIndex": 2
+    },
+    {
+        "Id": 12,
+        "Question": "Perspektywa to technika pozwalająca:",
+        "Answers": [
+            "dobrać właściwe kolory",
+            "tworzyć efekt przestrzenności",
+            "utrwalać obraz aparatem",
+            "mieszać farby"
+        ],
+        "CorrectIndex": 1
+    },
+    {
+        "Id": 13,
+        "Question": "Sumienie to:",
+        "Answers": [
+            "narząd człowieka",
+            "zbiór zasad ortograficznych",
+            "zdolność oceny własnych czynów",
+            "część mózgu odpowiedzialna za mowę"
+        ],
+        "CorrectIndex": 2
+    },
+    {
+        "Id": 14,
+        "Question": "Pełny kąt ma:",
+        "Answers": [ "90°", "180°", "270°", "360°" ],
+        "CorrectIndex": 3
+    },
+    {
+        "Id": 15,
+        "Question": "pH poniżej 7 oznacza, że roztwór jest:",
+        "Answers": [ "zasadowy", "obojętny", "kwaśny", "stały" ],
+        "CorrectIndex": 2
+    }
+]
