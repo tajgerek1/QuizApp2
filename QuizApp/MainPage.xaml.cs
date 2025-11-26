@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Text.Json;
 
 
@@ -149,6 +149,7 @@ public partial class MainPage : ContentPage
     }
     private void EndGame()
     {
+        QuestionFrame.IsVisible = false;
         QuestionLabel.IsVisible = false;
         AnswerButton1.IsVisible = false;
         AnswerButton2.IsVisible = false;
@@ -163,7 +164,7 @@ public partial class MainPage : ContentPage
         if (score1 > score2)
             ResultLabel.Text = $"Wygrał Gracz 1! ({score1} : {score2})";
         else if (score2 > score1)
-            ResultLabel.Text = $"Wygrał Gracz 2! ({score2} : {score1})";
+            ResultLabel.Text = $"Wygrał Gracz 2! ({score1} : {score2})";
         else
             ResultLabel.Text = $"Remis! ({score1} : {score2})";
     }
@@ -178,7 +179,7 @@ public partial class MainPage : ContentPage
         questionsAnswered1 = 0;
         questionsAnswered2 = 0;
 
-
+        QuestionFrame.IsVisible = true;
         ResultFrame.IsVisible = false;
         QuestionLabel.IsVisible = true;
         PlayerTurnLabel.IsVisible = true;
