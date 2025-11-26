@@ -18,11 +18,16 @@ public partial class MainPage : ContentPage
     private int questionsAnswered2 = 0;
 
 
+    bool isShowingAnswer = false;
+
+
     public MainPage()
     {
         InitializeComponent();
         StartGame();
     }
+
+
     private async void StartGame()
     {
         await LoadQuestions();
@@ -36,12 +41,19 @@ public partial class MainPage : ContentPage
         using var reader = new StreamReader(stream, Encoding.UTF8);
         var json = await reader.ReadToEndAsync();
 
+
         _questions = JsonSerializer.Deserialize<List<QuizQuestion>>(json);
+        _questions = _questions.OrderBy(q => Random.Shared.Next()).ToList();
     }
-
-
     private void ShowQuestion()
     {
+        isShowingAnswer = false;
+
+
+        ResetButtonColors();
+        EnableButtons(true);
+
+
         if (currentQuestionIndex >= _questions.Count)
         {
             EndGame();
@@ -62,9 +74,11 @@ public partial class MainPage : ContentPage
         PlayerTurnLabel.Text = $"Tura gracza {currentPlayer}";
     }
 
-    private void AnswerClicked(object sender, EventArgs e)
+
+    private async void AnswerClicked(object sender, EventArgs e)
     {
-        if (_questions == null) return;
+        if (_questions == null || isShowingAnswer) return;
+        isShowingAnswer = true;
 
 
         var button = (Button)sender;
@@ -76,6 +90,15 @@ public partial class MainPage : ContentPage
         var correct = _questions[currentQuestionIndex].CorrectIndex;
 
 
+        EnableButtons(false);
+
+
+        GetButton(correct).BackgroundColor = Colors.LightGreen;
+
+
+        if (answerIndex != correct)
+            button.BackgroundColor = Colors.IndianRed;
+
         if (answerIndex == correct)
         {
             if (currentPlayer == 1) score1++; else score2++;
@@ -83,6 +106,8 @@ public partial class MainPage : ContentPage
 
 
         if (currentPlayer == 1) questionsAnswered1++; else questionsAnswered2++;
+
+        await Task.Delay(1200);
 
 
         if (questionsAnswered1 >= 5 && questionsAnswered2 >= 5)
@@ -95,6 +120,32 @@ public partial class MainPage : ContentPage
         currentPlayer = currentPlayer == 1 ? 2 : 1;
         currentQuestionIndex++;
         ShowQuestion();
+    }
+    private Button GetButton(int index) => index switch
+    {
+        0 => AnswerButton1,
+        1 => AnswerButton2,
+        2 => AnswerButton3,
+        _ => AnswerButton4
+    };
+
+
+    private void EnableButtons(bool enable)
+    {
+        AnswerButton1.IsEnabled = enable;
+        AnswerButton2.IsEnabled = enable;
+        AnswerButton3.IsEnabled = enable;
+        AnswerButton4.IsEnabled = enable;
+    }
+
+
+    private void ResetButtonColors()
+    {
+        var defaultColor = Color.FromArgb("#e0e7ff");
+        AnswerButton1.BackgroundColor = defaultColor;
+        AnswerButton2.BackgroundColor = defaultColor;
+        AnswerButton3.BackgroundColor = defaultColor;
+        AnswerButton4.BackgroundColor = defaultColor;
     }
     private void EndGame()
     {
@@ -116,6 +167,7 @@ public partial class MainPage : ContentPage
         else
             ResultLabel.Text = $"Remis! ({score1} : {score2})";
     }
+
 
     private void RestartGame(object sender, EventArgs e)
     {
